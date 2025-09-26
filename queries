@@ -1,0 +1,102 @@
+a
+SELECT 
+    p.name AS product_name,
+    SUM(t.amount) AS total_sales,
+    RANK() OVER (ORDER BY SUM(t.amount) DESC) AS product_rank
+FROM transactions t
+JOIN products p ON t.product_id = p.product_id
+GROUP BY p.name;
+
+
+b
+SELECT 
+    c.name AS customer_name,
+    COUNT(t.transaction_id) AS transaction_count,
+    SUM(t.amount) AS total_spent
+FROM customers c
+LEFT JOIN transactions t ON c.customer_id = t.customer_id
+GROUP BY c.name;
+
+
+c
+SELECT 
+    DATE_FORMAT(sale_date, '%Y-%m') AS month,
+    SUM(amount) AS monthly_sales,
+    SUM(SUM(amount)) OVER (ORDER BY DATE_FORMAT(sale_date, '%Y-%m')) AS running_total
+FROM transactions
+GROUP BY DATE_FORMAT(sale_date, '%Y-%m')
+ORDER BY month;
+
+
+d
+SELECT 
+    DATE_FORMAT(sale_date, '%Y-%m') AS month,
+    SUM(amount) AS monthly_sales,
+    LAG(SUM(amount)) OVER (ORDER BY DATE_FORMAT(sale_date, '%Y-%m')) AS prev_month,
+    (SUM(amount) - LAG(SUM(amount)) OVER (ORDER BY DATE_FORMAT(sale_date, '%Y-%m'))) AS growth
+FROM transactions
+GROUP BY DATE_FORMAT(sale_date, '%Y-%m')
+ORDER BY month;
+
+
+e
+SELECT 
+    c.name AS customer_name,
+    SUM(t.amount) AS total_spent,
+    NTILE(4) OVER (ORDER BY SUM(t.amount) DESC) AS spending_quartile
+FROM transactions t
+JOIN customers c ON t.customer_id = c.customer_id
+GROUP BY c.name;
+
+
+f
+SELECT 
+    DATE_FORMAT(sale_date, '%Y-%m') AS month,
+    SUM(amount) AS monthly_sales,
+    AVG(SUM(amount)) OVER (
+        ORDER BY DATE_FORMAT(sale_date, '%Y-%m')
+        ROWS BETWEEN 2 PRECEDING AND CURRENT ROW
+    ) AS moving_avg
+FROM transactions
+GROUP BY DATE_FORMAT(sale_date, '%Y-%m')
+ORDER BY month;
+
+
+g
+SELECT 
+    c.name AS customer_name,
+    SUM(t.amount) AS total_spent,
+    ROW_NUMBER() OVER (ORDER BY SUM(t.amount) DESC) AS rank_position
+FROM transactions t
+JOIN customers c ON t.customer_id = c.customer_id
+GROUP BY c.name;
+
+
+h
+SELECT 
+    c.name AS customer_name,
+    SUM(t.amount) AS total_spent,
+    CUME_DIST() OVER (ORDER BY SUM(t.amount)) AS cumulative_distribution
+FROM transactions t
+JOIN customers c ON t.customer_id = c.customer_id
+GROUP BY c.name;
+
+
+i
+SELECT 
+    p.name AS product_name,
+    SUM(t.amount) AS total_sales,
+    PERCENT_RANK() OVER (ORDER BY SUM(t.amount)) AS percent_rank
+FROM transactions t
+JOIN products p ON t.product_id = p.product_id
+GROUP BY p.name;
+
+
+j
+SELECT 
+    p.name AS product_name,
+    SUM(t.amount) AS total_sales,
+    DENSE_RANK() OVER (ORDER BY SUM(t.amount) DESC) AS dense_rank
+FROM transactions t
+JOIN products p ON t.product_id = p.product_id
+GROUP BY p.name;
