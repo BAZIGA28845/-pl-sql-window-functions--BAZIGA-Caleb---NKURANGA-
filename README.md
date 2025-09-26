@@ -322,4 +322,4 @@ NBCaleb-Hotel-PL-SQL/
 9. Hotel Revenue Management - ResearchGate Papers
 10. Time Series Analysis in Business - Academic Sources
 
-**Integrity Statement:** All sources were properly cited. Implementations and analysis represent original work **FROM NKURANGA BAZIGA Caleb for any problem you can contact him via emali:bazigacaleb@gmail.com or via phone no:0783880408**. No AI-generated content was copied without attribution or adaptation.
+
