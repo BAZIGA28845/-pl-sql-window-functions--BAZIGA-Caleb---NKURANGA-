@@ -134,6 +134,7 @@ customers (1) ----< transactions >---- (1) products
     |                                      |
     └----< customer_products >-------------┘
 ```
+<img width="569" height="326" alt="image" src="https://github.com/user-attachments/assets/0fa881bb-da25-4518-a99e-869e0f18320c" />
 
 ## Step 4: PL/SQL Window Functions Implementation
 
