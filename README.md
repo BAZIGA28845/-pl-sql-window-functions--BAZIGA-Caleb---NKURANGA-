@@ -10,9 +10,8 @@
 3. [Step 3: Database Schema](#step-3-database-schema)
 4. [Step 4: PL/SQL Window Functions Implementation](#step-4-plsql-window-functions-implementation)
 5. [Step 5: Results Analysis](#step-5-results-analysis)
-6. [File Structure](#file-structure)
-7. [Key Business Insights](#key-business-insights)
-8. [References](#references)
+6. [Key Business Insights](#key-business-insights)
+7. [References](#references)
 
 ## Step 1: Problem Definition
 
@@ -288,19 +287,6 @@ International customers probably have more spending money and are willing to pay
 ### What To Do Next (Prescriptive Analysis)
 The hotel should focus more marketing on international customers since they spend more. They should make sure popular products like Pizza and Sushi are always available. For local customers, they could offer combo deals or loyalty programs to increase spending. The hotel should also track which products make the most profit, not just total sales.
 
-## File Structure
-```
-NBCaleb-Hotel-PL-SQL/
-├── database/
-│   ├── schema.sql          # Database tables
-│   ├── sample_data.sql     # Insert customer and product data
-│   └── window_queries.sql  # All 10 PL/SQL window function queries
-├── screenshots/
-│   ├── query_a_results.png # Screenshots of each query result
-│   ├── query_b_results.png
-│   └── ...
-└── README.md              # This file
-```
 
 **Note:** For enhanced readability, SQL code blocks can be displayed with green backgrounds when viewed in compatible markdown viewers or by adding custom CSS styling.
 
@@ -314,13 +300,14 @@ NBCaleb-Hotel-PL-SQL/
 ## References
 1. Oracle PL/SQL Documentation - Window Functions
 2. Database Design Fundamentals - Elmasri & Navathe
-3. SQL Performance Explained - Markus Winand
-4. Hotel Industry Analytics - Cornell Hotel Reports
-5. Customer Segmentation Strategies - Marketing Science Journal
-6. Business Intelligence Best Practices - Kimball Group
-7. PL/SQL Window Functions Tutorial - Oracle Learning
-8. Database Normalization Guide - Oracle Documentation
-9. Hotel Revenue Management - ResearchGate Papers
-10. Time Series Analysis in Business - Academic Sources
+3. W3Schools (2024). SQL Window Functions Tutorial. Web Development Reference. https://www.w3schools.com/sql/sql_window_functions.asp
+4. SQL Performance Explained - Markus Winand
+5. Hotel Industry Analytics - Cornell Hotel Reports
+6. Customer Segmentation Strategies - Marketing Science Journal
+7. Business Intelligence Best Practices - Kimball Group
+8. PL/SQL Window Functions Tutorial - Oracle Learning
+9. Database Normalization Guide - Oracle Documentation
+10. Hotel Revenue Management - ResearchGate Papers
+11. Time Series Analysis in Business - Academic Sources
 
 
