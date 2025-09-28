@@ -311,3 +311,11 @@ The hotel should focus more marketing on international customers since they spen
 11. Time Series Analysis in Business - Academic Sources
 
 
+**In case of any challenges or further questions regarding this work, kindly feel free to reach out through** 
+**Contact:0783880408**
+**Email:bazigacaleb@gmail.com**
+
+
+ **“Whoever is faithful in very little is also faithful in much.” – Luke 16:10
+ As database professionals, uphold accuracy, confidentiality, and integrity. Your reputation is built on
+ consistent honesty, quality, and responsibility.**
