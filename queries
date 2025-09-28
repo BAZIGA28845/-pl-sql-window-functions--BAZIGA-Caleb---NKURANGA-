@@ -1,0 +1,81 @@
+STEP 1: Create Database
+CREATE DATABASE BAZIGA_HR;
+USE BAZIGA_HR;
+
+STEP 2 & 3: Create Tables
+CREATE TABLE customers (
+    customer_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    region VARCHAR(50)
+);
+
+CREATE TABLE products (
+    product_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    category VARCHAR(50)
+);
+
+CREATE TABLE transactions (
+    transaction_id INT PRIMARY KEY,
+    customer_id INT,
+    product_id INT,
+    sale_date DATE,
+    amount DECIMAL(10,2),
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+
+STEP 3: Insert Customers (Local + Foreign)
+INSERT INTO customers VALUES
+(1, 'John Doe', 'Kigali'),
+(2, 'Alice Uwase', 'Huye'),
+(3, 'Eric Niyonsenga', 'Musanze'),
+(4, 'Claudine Mukamana', 'Rubavu'),
+(5, 'David Hakizimana', 'Nyanza'),
+(6, 'Michael Smith', 'London'),
+(7, 'Sophia Johnson', 'New York'),
+(8, 'Liam Brown', 'Paris'),
+(9, 'Olivia Garcia', 'Tokyo'),
+(10, 'Noah Miller', 'Berlin'),
+(11, 'Emma Davis', 'Toronto'),
+(12, 'James Wilson', 'Rome'),
+(13, 'Ava Martinez', 'Madrid'),
+(14, 'Isabella Anderson', 'Sydney'),
+(15, 'William Thomas', 'Dubai');
+
+STEP 3: Insert Products (Local + Foreign Mix)
+INSERT INTO products VALUES
+(101, 'Grilled Chicken', 'Food'),
+(102, 'Chapati', 'Food'),
+(103, 'Fanta Orange', 'Drink'),
+(104, 'Banana Cake', 'Cake'),
+(105, 'Coffee', 'Drink'),
+(106, 'Pizza Margherita', 'Food'),
+(107, 'Sushi Roll', 'Food'),
+(108, 'Cappuccino', 'Drink'),
+(109, 'Strawberry Cake', 'Cake'),
+(110, 'Green Tea', 'Drink');
+
+STEP 3: Insert Transactions (20 total)
+INSERT INTO transactions VALUES
+(1001, 1, 101, '2025-01-05', 5000),
+(1002, 2, 103, '2025-01-10', 1000),
+(1003, 1, 104, '2025-02-03', 3000),
+(1004, 3, 101, '2025-02-10', 5000),
+(1005, 4, 105, '2025-02-15', 2000),
+(1006, 2, 102, '2025-03-02', 1500),
+(1007, 5, 103, '2025-03-05', 1000),
+(1008, 1, 105, '2025-03-07', 2000),
+(1009, 3, 104, '2025-04-01', 3000),
+(1010, 4, 101, '2025-04-03', 5000),
+(1011, 6, 106, '2025-04-10', 8000),    London
+(1012, 7, 107, '2025-04-15', 12000),   New York
+(1013, 8, 108, '2025-05-01', 4000),    Paris
+(1014, 9, 109, '2025-05-03', 6000),    Tokyo
+(1015, 10, 110, '2025-05-05', 2500),   Berlin
+(1016, 11, 106, '2025-05-10', 8000),   Toronto
+(1017, 12, 107, '2025-06-01', 12000),  Rome
+(1018, 13, 108, '2025-06-05', 4000),   Madrid
+(1019, 14, 109, '2025-06-07', 6000),   Sydney
+(1020, 15, 110, '2025-06-10', 2500);   Dubai
+ 
