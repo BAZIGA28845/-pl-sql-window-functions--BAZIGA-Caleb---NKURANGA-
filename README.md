@@ -103,24 +103,32 @@ In 3 months, we earned about 19,333 each month on average.
 ### Table Explanations
 
 **1. Customers Table**
+<img width="1919" height="606" alt="2 CREATE TABLE OF CUSTOMERS" src="https://github.com/user-attachments/assets/32b15efb-a892-4065-9378-9a831f4a6138" />
+
 - What it does: List of all people who visit the hotel
 - Columns: customer_id, name, region
 - Example: John Doe from Kigali → 1, John Doe, Kigali
 - This is a list of all people who buy food or drinks
 
 **2. Products Table** 
+<img width="1920" height="1008" alt="3  CREATE TABLE OF PRODUCTS" src="https://github.com/user-attachments/assets/f7952fbd-196d-4038-9eba-4364252ec581" />
+
 - What it does: List of all products the hotel sells
 - Columns: product_id, name, category
 - Example: Grilled Chicken → 101, Grilled Chicken, Food
 - This is like a menu with all foods, drinks, and cakes
 
 **3. Transactions Table**
+<img width="1920" height="1008" alt="4 CREATE TABLE TRANSACTIONS" src="https://github.com/user-attachments/assets/4e871631-eadb-401c-8894-5e5eb2e79bbc" />
+
 - What it does: Record every sale
 - Columns: transaction_id, customer_id, product_id, sale_date, amount
 - Example: 1001, 1, 101, 2025-01-05, 5000 → John bought Grilled Chicken for 5000 on Jan 5
 - This table is like a diary showing who bought what and when
 
 **4. Customer_Products Table**
+<img width="1920" height="1008" alt="5 CREATE TABLE CUSTOMER_PRODUCT" src="https://github.com/user-attachments/assets/ace50a5c-5162-4589-9583-1305ca966463" />
+
 - What it does: Shows which customers bought which products and how many times
 - Columns: customer_product_id, customer_id, product_id, quantity
 - Example: 5001, 1, 101, 2 → John bought 2 Grilled Chicken
