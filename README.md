@@ -154,6 +154,8 @@ GROUP BY p.name;
 
 </td></tr></table>
 **What it does:** Adds up money each product made and gives a rank. Rank 1 means the product that earned most money.
+<img width="1920" height="1008" alt="12 Top Products by Revenue (RANK)" src="https://github.com/user-attachments/assets/10a0cbcb-1059-4ec0-899a-9a1e8ee0fcd2" />
+
 
 ### (b) Customer Transaction Analysis - Aggregate Functions
 ```sql
@@ -167,6 +169,8 @@ LEFT JOIN transactions t ON c.customer_id = t.customer_id
 GROUP BY c.name;
 ```
 **What it does:** Counts how many times each customer visited and adds up all money they spent.
+<img width="1920" height="1008" alt="13 Count of Transactions   Total Spent per Customer" src="https://github.com/user-attachments/assets/722854c3-7489-4de4-949f-4731ccaab778" />
+
 
 ### (c) Running Monthly Sales - SUM() OVER()
 ```sql
@@ -180,6 +184,8 @@ GROUP BY DATE_FORMAT(sale_date, '%Y-%m')
 ORDER BY month;
 ```
 **What it does:** Shows total sales for each month and keeps adding month by month.
+<img width="1906" height="657" alt="14 Running Total of Sales per Month" src="https://github.com/user-attachments/assets/cfaddd80-7b31-46fc-8095-4892dcf931ce" />
+
 
 ### (d) Month-over-Month Growth - LAG()
 ```sql
@@ -194,6 +200,8 @@ GROUP BY DATE_FORMAT(sale_date, '%Y-%m')
 ORDER BY month;
 ```
 **What it does:** Compares this month sales to last month. Positive number means sales went up.
+<img width="1919" height="574" alt="15 Month-over-Month Growth" src="https://github.com/user-attachments/assets/8446cbbc-4d9a-4a56-a1a1-b6698196a3f0" />
+
 
 ### (e) Customer Spending Groups - NTILE(4)
 ```sql
@@ -207,6 +215,8 @@ JOIN customers c ON t.customer_id = c.customer_id
 GROUP BY c.name;
 ```
 **What it does:** Divides customers into 4 groups. Group 1 has big spenders, Group 4 has small spenders.
+<img width="1920" height="1008" alt="16 Customer Spending Quartiles" src="https://github.com/user-attachments/assets/71cd8a1c-095a-4090-8687-e0cfe418e8cf" />
+
 
 ### (f) Moving Average Sales - AVG() OVER()
 ```sql
@@ -223,6 +233,8 @@ GROUP BY DATE_FORMAT(sale_date, '%Y-%m')
 ORDER BY month;
 ```
 **What it does:** Calculates average sales over 3 months to see smooth trends.
+<img width="1920" height="1008" alt="17 Month Moving Average of Sales" src="https://github.com/user-attachments/assets/253a4f8d-321c-4c57-9808-4ae727d128f3" />
+
 
 ### (g) Customer Ranking - ROW_NUMBER()
 ```sql
@@ -236,6 +248,8 @@ JOIN customers c ON t.customer_id = c.customer_id
 GROUP BY c.name;
 ```
 **What it does:** Gives unique rank to each customer by how much they spent.
+<img width="1920" height="1008" alt="18 Top Customers by Total Spending (ROW_NUMBER)" src="https://github.com/user-attachments/assets/d2684d6e-a715-4e2d-9f49-2f76e6f3eebc" />
+
 
 ### (h) Customer Spending Distribution - CUME_DIST()
 ```sql
@@ -249,6 +263,8 @@ JOIN customers c ON t.customer_id = c.customer_id
 GROUP BY c.name;
 ```
 **What it does:** Shows what percent of customers spent less than or equal to each person.
+<img width="1920" height="1008" alt="19 Cumulative Distribution of Customer Spending" src="https://github.com/user-attachments/assets/4feb2b62-31a7-45d8-935f-e381485622f8" />
+
 
 ### (i) Product Percent Ranking - PERCENT_RANK()
 ```sql
@@ -262,6 +278,8 @@ JOIN products p ON t.product_id = p.product_id
 GROUP BY p.name;
 ```
 **What it does:** Shows product rank as percent from lowest to highest sales.
+<img width="1920" height="1008" alt="20 Percent Rank of Products by Sales" src="https://github.com/user-attachments/assets/b5a6ad39-73bc-43fb-a013-f669f1d26cbd" />
+
 
 ### (j) Dense Product Ranking - DENSE_RANK()
 ```sql
@@ -275,6 +293,8 @@ JOIN products p ON t.product_id = p.product_id
 GROUP BY p.name;
 ```
 **What it does:** Ranks products without skipping numbers even if two products have same sales.
+<img width="1920" height="1008" alt="21 Dense Rank of Products" src="https://github.com/user-attachments/assets/ff19b324-0286-45fb-b92f-09c52cc1bdba" />
+
 
 ## Step 5: Results Analysis
 
